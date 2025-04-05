@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campfire Animation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1a1a1a;
+}
+
+.campfire {
+    position: relative;
+    width: 100px;
+    height: 150px;
+}
+
+.wood {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 20px;
+    background-color: #8B4513;
+    border-radius: 5px;
+}
+
+.flame {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 60px;
+    background-color: #FF4500;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: flicker 1s infinite ease-in-out;
+}
+
+.flame1 {
+    left: 40%;
+    animation-delay: 0.2s;
+}
+
+.flame2 {
+    left: 50%;
+    animation-delay: 0.4s;
+}
+
+.flame3 {
+    left: 60%;
+    animation-delay: 0.6s;
+}
+
+@keyframes flicker {
+    0%, 100% {
+        transform: translateX(-50%) scaleY(1);
+        background-color: #FF4500;
+    }
+    50% {
+        transform: translateX(-50%) scaleY(1.2);
+        background-color: #FFA500;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="campfire">
+        <div class="wood"></div>
+        <div class="flame flame1"></div>
+        <div class="flame flame2"></div>
+        <div class="flame flame3"></div>
+    </div>
+</body>
+</html>
